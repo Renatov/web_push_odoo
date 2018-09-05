@@ -1,0 +1,38 @@
+{
+   "app": {
+      "background": {
+        "scripts": [ "underscore.js", "encoding.js", "common.js", "mime.js", "buffer.js", "log-full.js", "request.js", "chromesocketxhr.js", "connection.js", "webapp.js", "websocket.js", "handlers.js", "httplib.js", "upnp.js", "background.js", "background-not.js" ]
+      }
+   },
+   "author": "Prosebol",
+   "description": "Un centro de notificaciones para odoo con ip fijo para recepcionar notificaciones desde otro servidor.",
+  "icons": {
+    "128": "images/odoo_o128.png",
+    "256": "images/odoo_o256.png",
+    "512": "images/odoo_o512.png"
+  },
+   "manifest_version": 2,
+   "minimum_chrome_version": "45",
+   "name": "Notificaciones Odoo -> Chrome",
+   "offline_enabled": true,
+   "optional_permissions": [ "background" ],
+   "permissions": [ "alarms", "unlimitedStorage", "storage", "notifications", "browser", "power", "system.network", {
+      "fileSystem": [ "write", "directory", "retainEntries" ]
+   } ],
+   "short_name": "Notificaciones odoo",
+   "sockets": {
+      "tcp": {
+         "connect": [ "" ]
+      },
+      "tcpServer": {
+         "listen": [ "*:*" ]
+      },
+      "udp": {
+         "bind": [ "" ],
+         "multicastMembership": "",
+         "send": [ "" ]
+      }
+   },
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "0.1.2"
+}
